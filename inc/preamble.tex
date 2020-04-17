@@ -1,47 +1,47 @@
-\sloppy
-
-% Настройки стиля ГОСТ 7-32
-% Для начала определяем, хотим мы или нет, чтобы рисунки и таблицы нумеровались в пределах раздела, или нам нужна сквозная нумерация.
-\EqInChapter % формулы будут нумероваться в пределах раздела
-\TableInChapter % таблицы будут нумероваться в пределах раздела
-\PicInChapter % рисунки будут нумероваться в пределах раздела
-
-% Добавляем гипертекстовое оглавление в PDF
-\usepackage[
-bookmarks=true, colorlinks=true, unicode=true,
-urlcolor=black,linkcolor=black, anchorcolor=black,
-citecolor=black, menucolor=black, filecolor=black,
-]{hyperref}
-
-% Изменение начертания шрифта --- после чего выглядит таймсоподобно.
-% apt-get install scalable-cyrfonts-tex
-
-\IfFileExists{cyrtimes.sty}
-    {
-        \usepackage{cyrtimespatched}
-    }
-    {
-        % А если Times нету, то будет CM...
-    }
-
-\usepackage{graphicx}   % Пакет для включения рисунков
-
-% С такими оно полями оно работает по-умолчанию:
-% \RequirePackage[left=20mm,right=10mm,top=20mm,bottom=20mm,headsep=0pt]{geometry}
-% Если вас тошнит от поля в 10мм --- увеличивайте до 20-ти, ну и про переплёт не забывайте:
-\geometry{right=20mm}
-\geometry{left=30mm}
 
 
-% Пакет Tikz
-\usepackage{tikz}
-\usetikzlibrary{arrows,positioning,shadows}
+%%% Работа с русским языком
+\usepackage[english,russian]{babel}   %% загружает пакет многоязыковой вёрстки
+\usepackage{fontspec}      %% подготавливает загрузку шрифтов Open Type, True Type и др.
+\defaultfontfeatures{Ligatures={TeX},Renderer=Basic}  %% свойства шрифтов по умолчанию
+\setmainfont[Ligatures={TeX,Historic}]{Times New Roman} %% задаёт основной шрифт документа
+\setsansfont{Comic Sans MS}                    %% задаёт шрифт без засечек
+\setmonofont{Courier New}
+\usepackage{indentfirst}
+\frenchspacing
 
-% Произвольная нумерация списков.
-\usepackage{enumerate}
+%%% Страница
+\usepackage{geometry} % Простой способ задавать поля
+	\geometry{top=20mm}
+	\geometry{bottom=20mm}
+	\geometry{left=30mm}
+	\geometry{right=20mm}
 
-% ячейки в несколько строчек
-\usepackage{multirow}
+\usepackage{setspace} % Интерлиньяж
+\onehalfspacing % Интерлиньяж 1.5
+%\doublespacing % Интерлиньяж 2
+%\singlespacing % Интерлиньяж 1
 
-% itemize внутри tabular
-\usepackage{paralist,array}
+% Размер абзацного отступа – 5 знаков (1,25 см).
+\setlength{\parskip}{1.25cm}
+
+%%% Дополнительная работа с математикой
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools} % AMS
+\usepackage{icomma} % "Умная" запятая: $0,2$ --- число, $0, 2$ --- перечисление
+
+ %% Номера формул
+\mathtoolsset{showonlyrefs=true} % Показывать номера только у тех формул, на которые есть \eqref{} в тексте.
+%\usepackage{leqno} % Нумерация формул слева
+
+
+%%% Работа с картинками
+\usepackage{graphicx}  % Для вставки рисунков
+\graphicspath{{images/}{images2/}}  % папки с картинками
+\setlength\fboxsep{3pt} % Отступ рамки \fbox{} от рисунка
+\setlength\fboxrule{1pt} % Толщина линий рамки \fbox{}
+\usepackage{wrapfig} % Обтекание рисунков текстом
+
+%%% Работа с таблицами
+\usepackage{array,tabularx,tabulary,booktabs} % Дополнительная работа с таблицами
+\usepackage{longtable}  % Длинные таблицы
+\usepackage{multirow} % Слияние строк в таблице
