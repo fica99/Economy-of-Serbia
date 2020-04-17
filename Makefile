@@ -4,6 +4,8 @@ all: build run
 
 build:
 	xelatex $(name)
+	makeindex $(name).nlo -s nomencl.ist -o $(name).nls
+	xelatex $(name)
 
 run:
 	evince $(name).pdf
@@ -14,7 +16,11 @@ clean:
 		*.fls \
 		*.log \
 		*.out \
-		*synctex.gz
+		*synctex.gz \
+		*.nlo \
+		*.nls \
+		*.ilg \
+		*.toc \
 
 fclean: clean
 	rm -fr $(name).pdf

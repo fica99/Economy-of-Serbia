@@ -7,9 +7,24 @@
 \renewcommand{\geq}{\ensuremath{\geqslant}}
 \renewcommand{\emptyset}{\varnothing}
 
+%% Введение
+\newcommand{\Introduction}{\section*{Введение}}
+
+%% Новая страница для каждого section
+\newcommand{\sectionbreak}{\clearpage}
+
 %% Перенос знаков в формулах (по Львовскому)
 \newcommand*{\hm}[1]{#1\nobreak\discretionary{}
 {\hbox{$\mathsurround=0pt #1$}}{}}
+
+% Точки в оглавлении
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+
+% Изменение заголовка перечня
+\renewcommand{\nomname}{Перечень сокращений и условных обозначений}
+
+% Позволяет одновременно печатать условное обозначение в тексте документа и добавлять его в перечень
+\newcommand*{\nom}[2]{#1\nomenclature{#1}{#2}}
 
 %%% Теоремы
 \theoremstyle{plain} % Это стиль по умолчанию, его можно не переопределять.

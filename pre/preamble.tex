@@ -10,6 +10,15 @@
 \usepackage{indentfirst}
 \frenchspacing
 
+%Автоматизировать создание перечня условных обозначений и сокращений
+\usepackage[intoc]{nomencl}
+\makenomenclature
+% Пакет для точек в оглавлении
+\usepackage{tocloft}
+
+% Пакет для обрывания страницы перед новым section
+\usepackage{titlesec}
+
 %%% Страница
 \usepackage{geometry} % Простой способ задавать поля
 	\geometry{top=20mm}
@@ -45,3 +54,4 @@
 \usepackage{array,tabularx,tabulary,booktabs} % Дополнительная работа с таблицами
 \usepackage{longtable}  % Длинные таблицы
 \usepackage{multirow} % Слияние строк в таблице
+
