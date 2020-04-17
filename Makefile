@@ -3,7 +3,7 @@ name:=VKR_Crnorbnja_Filip
 all: build run
 
 build:
-	pdflatex -jobname=$(name) main.tex
+	pdflatex $(name)
 
 run:
 	evince $(name).pdf
@@ -13,7 +13,8 @@ clean:
 	*.fdb_latexmk \
 	*.fls \
 	*.log \
-	*.out
+	*.out \
+	*synctex.gz
 
 fclean: clean
 	rm -fr $(name).pdf
