@@ -8,10 +8,10 @@
 \renewcommand{\emptyset}{\varnothing}
 
 %% Введение
-\newcommand{\intro}{\section{Введение}}
+\newcommand{\intro}{\section*{Введение}} % Секция введение
 
-%% Новая страница для каждого section
-\newcommand{\sectionbreak}{\clearpage}
+% Имя текущей секции
+\newcommand*{\currentname}{\@currentlabelname}
 
 %% Перенос знаков в формулах (по Львовскому)
 \newcommand*{\hm}[1]{#1\nobreak\discretionary{}

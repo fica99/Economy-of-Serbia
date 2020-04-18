@@ -5,7 +5,9 @@ all: build run
 build:
 	xelatex $(name)
 	makeindex $(name).nlo -s nomencl.ist -o $(name).nls
+	biber $(name).bcf
 	xelatex $(name)
+
 
 run:
 	evince $(name).pdf
@@ -21,6 +23,10 @@ clean:
 		*.nls \
 		*.ilg \
 		*.toc \
+		*.run.xml \
+		*.bbl \
+		*.bcf \
+		*.blg
 
 fclean: clean
 	rm -fr $(name).pdf

@@ -12,11 +12,13 @@
 \usepackage[notintoc]{nomencl}
 \makenomenclature
 
+% Пакет для получения имени текущей секции
+\usepackage{nameref}
+\makeatletter
+
+
 % Пакет для точек в оглавлении
 \usepackage{tocloft}
-
-% Пакет для обрывания страницы перед новым section
-\usepackage{titlesec}
 
 %%% Страница
 \usepackage{geometry} % Простой способ задавать поля
@@ -73,3 +75,7 @@
 }
 
 \usepackage{csquotes} % Еще инструменты для ссылок
+
+% Пакет для работы с библиографией
+\usepackage[backend=biber,bibencoding=utf8,sorting=nyvt,maxcitenames=2,style=numeric]{biblatex}
+\addbibresource{base/base.bib}
