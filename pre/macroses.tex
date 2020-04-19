@@ -7,11 +7,15 @@
 \renewcommand{\geq}{\ensuremath{\geqslant}}
 \renewcommand{\emptyset}{\varnothing}
 
-%% Введение
-\newcommand{\intro}{\section*{Введение}} % Секция введение
-
 % Имя текущей секции
 \newcommand*{\currentname}{\@currentlabelname}
+
+% Команда для начала Введения
+\newcommand{\intro}{%
+\pagebreak
+\section*{Введение}
+\addcontentsline{toc}{section}{\currentname}
+}
 
 %% Перенос знаков в формулах (по Львовскому)
 \newcommand*{\hm}[1]{#1\nobreak\discretionary{}
@@ -37,3 +41,11 @@
 
 \theoremstyle{remark} % "Примечание"
 \newtheorem*{nonum}{Решение}
+
+% Команда для начала новой главы
+\newcommand{\glava}[1]{%
+\pagebreak
+\addtocounter{section}{1}
+\section*{Глава \arabic{section}. #1}
+\addcontentsline{toc}{section}{\currentname}
+}
