@@ -3,10 +3,10 @@ name:=VKR_Crnorbnja_Filip
 all: build run
 
 build:
-	xelatex $(name)
-	makeindex $(name).nlo -s nomencl.ist -o $(name).nls
+	xelatex $(name).tex
 	biber $(name).bcf
-	xelatex $(name)
+	makeindex $(name).nlo -s nomencl.ist -o $(name).nls
+	xelatex $(name).tex
 
 
 run:
