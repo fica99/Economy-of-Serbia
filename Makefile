@@ -4,10 +4,10 @@ all: build run
 
 build:
 	xelatex $(name).tex
-	biber $(name).bcf
 	makeindex $(name).nlo -s nomencl.ist -o $(name).nls
+	biber $(name).bcf
 	xelatex $(name).tex
-
+	xelatex $(name).tex
 
 run:
 	evince $(name).pdf
