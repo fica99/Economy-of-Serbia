@@ -50,3 +50,12 @@
 \section*{Глава \arabic{section}. #1}
 \addcontentsline{toc}{section}{\currentname}
 }
+
+% Команда для начала нового приложения
+\newcounter{appcount}
+\renewcommand{\appendix}{%
+\pagebreak
+\refstepcounter{appcount}
+\section*{Приложение \arabic{appcount}}
+\addcontentsline{toc}{section}{\currentname}
+}
