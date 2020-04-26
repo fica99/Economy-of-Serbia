@@ -1,0 +1,48 @@
+%% Преамбула TeX-файла
+
+% 1. Стиль и язык
+\documentclass[utf8x]{G7-32} % Стиль (по умолчанию будет 14pt)
+\usepackage[T2A]{fontenc}
+\usepackage[russian]{babel}
+% Остальные стандартные настройки убраны в preamble.inc.tex.
+\include{preamble.inc}
+
+% Полезные макросы листингов.
+\include{macros.inc}
+
+\begin{document}
+
+\frontmatter % выключает нумерацию ВСЕГО; здесь начинаются ненумерованные главы: реферат, введение, глоссарий, сокращения и прочее.
+
+% Команды \breakingbeforechapters и \nonbreakingbeforechapters
+% управляют разрывом страницы перед главами.
+% По-умолчанию страница разрывается.
+
+% \nobreakingbeforechapters
+% \breakingbeforechapters
+
+
+\input{inc/contents.tex}
+\input{inc/abbrev.tex}
+\input{inc/intro.tex}
+
+\mainmatter % это включает нумерацию глав и секций в документе ниже
+\input{inc/first_chapter.tex}
+\input{inc/second_chapter.tex}
+\input{inc/third_chapter.tex}
+\backmatter %% Здесь заканчивается нумерованная часть документа и начинаются ссылки и
+
+ %             %% заключение
+
+\input{inc/bibliography.tex}
+
+\appendix   % Тут идут приложения
+
+\input{inc/first_appendix.tex}
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
