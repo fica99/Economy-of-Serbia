@@ -11,7 +11,6 @@
 \include{macros.inc}
 
 \begin{document}
-
 \frontmatter % выключает нумерацию ВСЕГО; здесь начинаются ненумерованные главы: реферат, введение, глоссарий, сокращения и прочее.
 
 % Команды \breakingbeforechapters и \nonbreakingbeforechapters
@@ -27,13 +26,16 @@
 \input{inc/intro.tex}
 
 \mainmatter % это включает нумерацию глав и секций в документе ниже
-\input{inc/first_chapter.tex}
-\input{inc/second_chapter.tex}
-\input{inc/third_chapter.tex}
+\input{inc/chapter1.tex}
+\input{inc/chapter2.tex}
+\input{inc/chapter3.tex}
+\input{inc/chapter4.tex}
+\input{inc/chapter5.tex}
 \backmatter %% Здесь заканчивается нумерованная часть документа и начинаются ссылки и
 
- %             %% заключение
+\input{inc/conclusion.tex}
 
+ %             %% заключение
 \input{inc/bibliography.tex}
 
 \appendix   % Тут идут приложения
