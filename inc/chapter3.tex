@@ -17,6 +17,7 @@
 
 Введем специальные обозначения, которые представлены в таблице \ref{tab:desig_of_params}.
 \begin{table}[ht]
+	\centering
 	\caption{Специальные обозначения для параметров}
 	\begin{tabular}{|r|l|}
 	\hline
@@ -26,10 +27,13 @@
 	$I$                          & импорт                                                \\
 	$J$                          & размер инвестиций                                     \\
 	$C$                          & общие расходы на потребление                          \\
-	$E$                          & экспорт                                               \\ \hline
+	$E$                          & экспорт                                               \\
+	$L$                          & количество трудящегося населения\footnotemark         \\
+	$P$                          & население                                             \\\hline
 	\end{tabular}
 	\label{tab:desig_of_params}
 \end{table}
+\footnotetext{Трудящееся население включает людей в возрасте 15 лет и старше, которые способны производить товары и услуги в течение определенного периода. Значение включает людей, которые в настоящее время работают, и людей, которые являются безработными, но ищут работу, а также впервые ищущих работу. Однако не все, кто работают, включены. Неоплачиваемые работники, семейные работники и студенты часто не учитываются, а некоторые страны не учитывают военнослужащих. Численность рабочей силы имеет тенденцию меняться в течение года, когда сезонные работники приходят и уходят.}
 Переменные с нижним индексом $_{const}$ обозначают постоянные цены.
 В противном случае текущие.
 
@@ -61,11 +65,11 @@
 			legend pos = south east,
 		]
 		\legend{C, J, E, I, Y};
-		\addplot table [x={Year}, y={C}] {tables/Index_prices_(RSD).csv};
-		\addplot table [x={Year}, y={J}] {tables/Index_prices_(RSD).csv};
-		\addplot table [x={Year}, y={E}] {tables/Index_prices_(RSD).csv};
-		\addplot table [x={Year}, y={I}] {tables/Index_prices_(RSD).csv};
-		\addplot table [x={Year}, y={Y}] {tables/Index_prices_(RSD).csv};
+		\addplot table [x={Year}, y={C}] {tables/Index_prices.csv};
+		\addplot table [x={Year}, y={J}] {tables/Index_prices.csv};
+		\addplot table [x={Year}, y={E}] {tables/Index_prices.csv};
+		\addplot table [x={Year}, y={I}] {tables/Index_prices.csv};
+		\addplot table [x={Year}, y={Y}] {tables/Index_prices.csv};
 		\end{axis}
 	\end{tikzpicture}
 \end{center}
