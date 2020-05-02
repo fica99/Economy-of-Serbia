@@ -21,7 +21,7 @@
 	\begin{tabular}{|r|l|}
 	\hline
 	\multicolumn{1}{|r|}{Параметр} & \multicolumn{1}{l|}{Описание} \\ \hline
-	$t$                          &Значение, получаемое при вычитании 2010 из текущего года\\
+	$t$                          & Год                                                   \\
 	$Y$                          & ВВП                                                   \\
 	$I$                          & импорт                                                \\
 	$J$                          & размер инвестиций                                     \\
@@ -30,8 +30,6 @@
 	\end{tabular}
 	\label{tab:desig_of_params}
 \end{table}
-Все переменные с нижним индексом $_{stat}$ обозначают статистические данные.
-В противном случае, это параметры модели.
 Переменные с нижним индексом $_{const}$ обозначают постоянные цены.
 В противном случае текущие.
 
@@ -42,16 +40,33 @@
 Первым делом посчитаем индексы цен, определим поведение цен в среднем.
 Индекс цен представляет собой соотношение макроэкономических показателей данного периода в текущих и постоянных ценах.
 Для этого воспользуемся формулой:
-\begin{equation}
+\begin{equation*}
 	P(X(t)) = \cfrac{X(t)}{X_{const}(t)}
-\label{F:F1}
-\end{equation}
+\end{equation*}
 где $X(t)$ это макроэкономический показатель.
 
-На Рис. \ref{fig:index_rsd} видна динамика поведения цен.
-\begin{figure}
-	\centering
-	\includegraphics[width=\textwidth]{figures/index_rsd.png}
-	\caption{Индекс цен RSD 1993 -- 2018}
-	\label{fig:index_rsd}
-\end{figure}
+На графике ниже видна динамика поведения цен.
+\begin{center}
+	\begin{tikzpicture}
+		\begin{axis}[
+			title = Индекс цен (RSD),
+			xlabel = $t$,
+			ylabel = $P(X(t))$,
+			table/col sep = semicolon,
+			height = 0.3\paperheight,
+			width = 0.5\paperwidth,
+			xmin = 1993,
+			xmax = 2018,
+			/pgf/number format/1000 sep={},
+			legend pos = south east,
+		]
+		\legend{C, J, E, I, Y};
+		\addplot table [x={Year}, y={C}] {tables/Index_prices_(RSD).csv};
+		\addplot table [x={Year}, y={J}] {tables/Index_prices_(RSD).csv};
+		\addplot table [x={Year}, y={E}] {tables/Index_prices_(RSD).csv};
+		\addplot table [x={Year}, y={I}] {tables/Index_prices_(RSD).csv};
+		\addplot table [x={Year}, y={Y}] {tables/Index_prices_(RSD).csv};
+		\end{axis}
+	\end{tikzpicture}
+\end{center}
+В дальнейшем, при построении сложных моделей этот показатель может пригодиться.
