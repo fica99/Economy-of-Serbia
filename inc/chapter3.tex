@@ -53,7 +53,6 @@
 \begin{center}
 	\begin{tikzpicture}
 		\begin{axis}[
-			title = Индекс цен (RSD),
 			xlabel = $t$,
 			ylabel = $P(X(t))$,
 			table/col sep = semicolon,
@@ -72,5 +71,6 @@
 		\addplot table [x={Year}, y={Y}] {tables/Index_prices.csv};
 		\end{axis}
 	\end{tikzpicture}
+	\captionof{figure}{Индекс цен (RSD)}
 \end{center}
 В дальнейшем, при построении сложных моделей этот показатель может пригодиться.
