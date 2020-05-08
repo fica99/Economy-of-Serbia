@@ -90,25 +90,25 @@ K_{t+1} = s Y_t + (1 - \delta)K_{t}\text{.}
 Первым делом, для удобства составим таблицу с параметрами и их крайними значениями.
 \begin{table}[ht]
 	\centering
-	\caption{Неизвестные параметры модели}
+	\caption{Неизвестные параметры модели.}
 	\label{tab:parameters}
 	\begin{tabular}{|r|c|l|}
 	\hline
 	Параметр & Нижнее значение & Верхнее значение \\ \hline
 	$\alpha$ &      0          &      1           \\
-	$n$      &      -0.05      &      0.05        \\
-	$\psi$   &      0          &      0.1         \\
-	$g$      &      0          &      0.1         \\
+	$n$      &      -0,05      &      0,05        \\
+	$\psi$   &      0          &      0,1         \\
+	$g$      &      0          &      0,1         \\
 	$A_0$    &      1          &      100         \\
 	$s$      &      0          &      1           \\
-	$\delta$ &      0.01       &    0.1           \\ \hline
+	$\delta$ &      0,01       &    0,1           \\ \hline
 	\end{tabular}%
 \end{table}
 Разъясним граничные значения приведенные в таблице \ref{tab:parameters}.
 
 Ограничения $\alpha$ заданы из определения производственной функции Кобба-Дугласа.
 
-Параметр роста численности работающих $n$ определен в диапозоне от $-0.05$ до $0.05$, исходя из соображений, что каждый период кто-то становится, а кто-то перестает быть трудоспособным.
+Параметр роста численности работающих $n$ определен в диапозоне от $-0,05$ до $0,05$, исходя из соображений, что каждый период кто-то становится, а кто-то перестает быть трудоспособным.
 Теоретически изменение численности трудящихся не может быть более чем на 5 процентов в год.
 
 Увеличение эффективности квалифицированного рабочего от обучения $\psi$ не может быть более чем на 10 процентов в год.
@@ -153,8 +153,138 @@ S=\prod\limits_{X=Y,L,C,J}\left(1 -T_{X}\right)
 
 \section{Результаты}
 
+Максимизировав свертку критериев Тейла $S$ в Microsoft Excel\footnote{Microsoft Excel --- программа для работы с электронными таблицами, созданная корпорацией Microsoft.} с помощью метода Ньютона, были получены параметры, представленные в таблице \ref{tab::res_params}.
+\begin{table}[ht]
+	\centering
+	\caption{Найденные параметры модели.}
+	\label{tab::res_params}
+	\begin{tabular}{|r|l|}
+	\hline
+	Параметр & Значение         \\ \hline
+	$\alpha$ &      0.908       \\
+	$n$      &      0.005       \\
+	$\psi$   &      0.1         \\
+	$g$      &      0.1         \\
+	$A_0$    &      50          \\
+	$s$      &      0.172       \\
+	$\delta$ &      0.083       \\ \hline
+	\end{tabular}%
+\end{table}
+Результаты были округлены до тысячных.
+Так как при данном методе решения используется конечное число итераций, то результаты приблизительны.
+Такой метод позволяет найти только локальные экстремумы, однако были получены достаточно близкие результаты к статистике.
+
+Значения критерия Тейла представлены в таблице \ref{tab::res_crit_teil}.
+\begin{table}[ht]
+	\centering
+	\caption{Найденные критерии Тейла.}
+	\label{tab::res_crit_teil}
+	\begin{tabular}{|r|l|}
+	\hline
+	Критерий Тейла & Значение         \\ \hline
+	$T_{Y}$        &      0,042       \\
+	$T_{C}$        &      0,034       \\
+	$T_{J}$        &      0,06        \\
+	$T_{L}$        &      0,006       \\ \hline
+	\end{tabular}%
+\end{table}
+Данные результаты дают сверту $S=0,864$.
+Таблица смоделированных данных представлена в приложении \ref{cha:second_app}.
+
+Начальный уровень технологиского прогресса $A_0$ взят произвольно.
+Произвольное изменение значений этого показателя показало, что начальный уровень технологического прогресса не столь существенно меняет результат.
+Существенную роль играет ежегодный рост технологического прогресса.
+
+Наиболее близким к статистическим данным является количество трудящегося населения.
+\begin{center}
+	\captionof{figure}{Сравнение статистических и полученных результатов по количеству трудящегося населения.}
+	\begin{tikzpicture}
+		\begin{axis}[
+			xlabel = $t$,
+			ylabel = $L(t)$,
+			table/col sep = semicolon,
+			height = 0.3\paperheight,
+			width = 0.5\paperwidth,
+			xmin = 0,
+			xmax = 8,
+			/pgf/number format/1000 sep={},
+			legend pos = south east,
+		]
+		\legend{$L$, $L_{stat}$};
+		\addplot[solid,draw=blue] table[x={Year}, y={L}] {tables/L.csv};
+		\addplot[dashed,draw=red] table[x={Year}, y={Lstat}] {tables/L.csv};
+		\end{axis}
+	\end{tikzpicture}
+\end{center}
+
+Наиболее значимым макроэкономическим показателем является ВВП.
+Нарисуем график сравнения статистических и полученных результатов.
+\begin{center}
+	\captionof{figure}{Сравнение статистических и полученных результатов по ВВП.}
+	\begin{tikzpicture}
+		\begin{axis}[
+			xlabel = $t$,
+			ylabel = $Y(t)$,
+			table/col sep = semicolon,
+			height = 0.3\paperheight,
+			width = 0.5\paperwidth,
+			xmin = 0,
+			xmax = 8,
+			/pgf/number format/1000 sep={},
+			legend pos = south east,
+		]
+		\legend{$Y$, $Y_{stat}$};
+		\addplot[solid,draw=blue] table[x={Year}, y={Y}] {tables/Y.csv};
+		\addplot[dashed,draw=red] table[x={Year}, y={Ystat}] {tables/Y.csv};
+		\end{axis}
+	\end{tikzpicture}
+\end{center}
+
+\begin{center}
+	\captionof{figure}{Сравнение статистических и полученных результатов по потреблению .}
+	\begin{tikzpicture}
+		\begin{axis}[
+			xlabel = $t$,
+			ylabel = $C(t)$,
+			table/col sep = semicolon,
+			height = 0.3\paperheight,
+			width = 0.5\paperwidth,
+			xmin = 0,
+			xmax = 8,
+			/pgf/number format/1000 sep={},
+			legend pos = south east,
+		]
+		\legend{$C$, $C_{stat}$};
+		\addplot[solid,draw=blue] table[x={Year}, y={C}] {tables/C.csv};
+		\addplot[dashed,draw=red] table[x={Year}, y={Cstat}] {tables/C.csv};
+		\end{axis}
+	\end{tikzpicture}
+\end{center}
+
+\begin{center}
+	\captionof{figure}{Сравнение статистических и полученных результатов по инвестициям.}
+	\begin{tikzpicture}
+		\begin{axis}[
+			xlabel = $t$,
+			ylabel = $I(t)$,
+			table/col sep = semicolon,
+			height = 0.3\paperheight,
+			width = 0.5\paperwidth,
+			xmin = 0,
+			xmax = 8,
+			/pgf/number format/1000 sep={},
+			legend pos = south east,
+		]
+		\legend{$I$, $I_{stat}$};
+		\addplot[solid,draw=blue] table[x={Year}, y={I}] {tables/I.csv};
+		\addplot[dashed,draw=red] table[x={Year}, y={Istat}] {tables/I.csv};
+		\end{axis}
+	\end{tikzpicture}
+\end{center}
+
 
 Существует множество математических моделей, которые используются не только в макроэкономике.
 Этот инструмент являются универсальным для многих задач и в настоящее время очень актуален в мире.
+
 
 

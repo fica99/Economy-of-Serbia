@@ -18,7 +18,7 @@
 Введем специальные обозначения, которые представлены в таблице \ref{tab:desig_of_params}.
 \begin{table}[ht]
 	\centering
-	\caption{Специальные обозначения для параметров}
+	\caption{Специальные обозначения для параметров.}
 	\begin{tabular}{|r|l|}
 	\hline
 	\multicolumn{1}{|r|}{Параметр} & \multicolumn{1}{l|}{Описание} \\ \hline
@@ -47,6 +47,7 @@
 
 На графике ниже видна динамика поведения цен.
 \begin{center}
+	\captionof{figure}{Индекс цен (RSD)}
 	\begin{tikzpicture}
 		\begin{axis}[
 			xlabel = $t$,
@@ -59,7 +60,7 @@
 			/pgf/number format/1000 sep={},
 			legend pos = south east,
 		]
-		\legend{C, J, E, I, Y};
+		\legend{$C$, $J$, $E$, $I$, $Y$};
 		\addplot table [x={Year}, y={C}] {tables/Index_prices.csv};
 		\addplot table [x={Year}, y={J}] {tables/Index_prices.csv};
 		\addplot table [x={Year}, y={E}] {tables/Index_prices.csv};
@@ -67,6 +68,5 @@
 		\addplot table [x={Year}, y={Y}] {tables/Index_prices.csv};
 		\end{axis}
 	\end{tikzpicture}
-	\captionof{figure}{Индекс цен (RSD)}
 \end{center}
 В дальнейшем, при построении сложных моделей этот показатель может играть очень важную роль.
