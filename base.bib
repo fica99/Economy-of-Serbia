@@ -1,14 +1,4 @@
-@Book{math_models,
-author      = {Самарский А. А. and Михайлов А. П.},
-title       = {Математическое моделирование. Идеи. Методы. Примеры},
-address = {М.},
-publisher = {Физматлит},
-year = {2001},
-edition = 2,
-language = {russian}
-}
-
-@Book{solow_growth,
+@article{mixon_solow,
 author = {Mixon, Wilson and Sockwell, William},
 year = {2007},
 month = {02},
@@ -19,13 +9,13 @@ journal = {Journal of Economic Education},
 doi = {10.3200/JECE.38.4.483}
 }
 
-@Book{economic_jones,
-author      = {Charles Jones and Dietrich Vollrath},
-year = {2013},
-title       = {Introduction to Economic Growth},
-publisher = {W. W. Norton \& Company},
-edition = 3,
-language = {english}
+@book{jones2013introduction,
+title={Introduction to Economic Growth},
+author={Jones, C.I. and Vollrath, D.},
+isbn={9780393919172},
+lccn={2012045551},
+year={2013},
+publisher={W.W. Norton}
 }
 
 @techreport{Economic_mankiw,
@@ -51,9 +41,8 @@ language = {english},
 urldate = {19.04.2020},
 authorother = {true},
 authorconf = {true},
-url = {http://pubdocs.worldbank.org/en/782101580729358303/Serbia-CEM-Synthesis-web.pdf}
+note = {\url{http://pubdocs.worldbank.org/en/782101580729358303/Serbia-CEM-Synthesis-web.pdf}}
 }
-
 
 @ARTICLE{worldbank_investment,
 author      = {Lazar Sestovic and Enrique Blanco Armas},
@@ -65,7 +54,7 @@ language = {english},
 urldate = {19.04.2020},
 authorother = {true},
 authorconf = {true},
-url = {http://pubdocs.worldbank.org/en/168251577293556733/SRB-CEM-Investment-for-Growth-wq.pdf}
+note = {\url{http://pubdocs.worldbank.org/en/168251577293556733/SRB-CEM-Investment-for-Growth-wq.pdf}}
 }
 
 @ARTICLE{worldbank_financing,
@@ -78,7 +67,7 @@ language = {english},
 urldate = {19.04.2020},
 authorother = {true},
 authorconf = {true},
-url = {http://pubdocs.worldbank.org/en/358601577293558709/SRB-CEM-Financing-for-Growth-wq.pdf}
+note = {\url{http://pubdocs.worldbank.org/en/358601577293558709/SRB-CEM-Financing-for-Growth-wq.pdf}}
 }
 
 @ARTICLE{worldbank_productivity,
@@ -91,7 +80,7 @@ language = {english},
 urldate = {19.04.2020},
 authorother = {true},
 authorconf = {true},
-url = {http://pubdocs.worldbank.org/en/822851576650043739/Serbia-CEM-Productivity-Note-17-12-sm.pdf}
+note = {\url{http://pubdocs.worldbank.org/en/822851576650043739/Serbia-CEM-Productivity-Note-17-12-sm.pdf}}
 }
 
 @ARTICLE{worldbank_encouraging,
@@ -104,7 +93,7 @@ language = {english},
 urldate = {19.04.2020},
 authorother = {true},
 authorconf = {true},
-url = {http://pubdocs.worldbank.org/en/771651576649384571/SRB-CEM-FDI-spillovers.pdf}
+note = {\url{http://pubdocs.worldbank.org/en/771651576649384571/SRB-CEM-FDI-spillovers.pdf}}
 }
 
 @ARTICLE{worldbank_labormarket,
@@ -117,7 +106,7 @@ language = {english},
 urldate = {19.04.2020},
 authorother = {true},
 authorconf = {true},
-url = {http://pubdocs.worldbank.org/en/501621577293868352/SRB-CEM-Labor-Market-for-Growth-wq.pdf}
+note = {\url{http://pubdocs.worldbank.org/en/501621577293868352/SRB-CEM-Labor-Market-for-Growth-wq.pdf}}
 }
 
 @ARTICLE{worldbank_barriers,
@@ -130,7 +119,7 @@ language = {english},
 urldate = {19.04.2020},
 authorother = {true},
 authorconf = {true},
-url = {http://pubdocs.worldbank.org/en/535691577293870277/SRB-CEM-Removing-Regulatory-Barriers-to-Competition-wq.pdf}
+note = {\url{http://pubdocs.worldbank.org/en/535691577293870277/SRB-CEM-Removing-Regulatory-Barriers-to-Competition-wq.pdf}}
 }
 
 @ARTICLE{worldbank_aid,
@@ -143,7 +132,7 @@ language = {english},
 urldate = {19.04.2020},
 authorother = {true},
 authorconf = {true},
-url = {http://pubdocs.worldbank.org/en/525621576650023118/SRB-CEM-State-Aid-sm.pdf}
+note = {\url{http://pubdocs.worldbank.org/en/525621576650023118/SRB-CEM-State-Aid-sm.pdf}}
 }
 
 @ARTICLE{worldbank_workforce,
@@ -156,48 +145,52 @@ language = {english},
 urldate = {19.04.2020},
 authorother = {true},
 authorconf = {true},
-url = {http://pubdocs.worldbank.org/en/260201580323446491/SRB-CEM-Building-a-Skilled-Workforce.pdf}
+note = {\url{http://pubdocs.worldbank.org/en/260201580323446491/SRB-CEM-Building-a-Skilled-Workforce.pdf}}
 }
 
-@online{unstat,
-url = {https://unstats.un.org/home/},
-title = {Статистическое агенство ООН},
-keyword = {ООН},
-date={2020},
-organization = {UN Statcom},
-urldate = {23.04.2020},
-language = {english}
+
+@misc{unstat,
+author = "UN Statcom",
+title = "Статистическое агенство ООН",
+year = "2020",
+howpublished = {\url{https://unstats.un.org/home/}},
 }
 
-@online{wiki_covid,
-	author = {Википедия},
-	title = {COVID-19},
-	year = {2020},
-	url = {https://ru.wikipedia.org/wiki/COVID-19},
-	organization = {Wikipedia},
-	urldate = {25.04.2020},
-	language = {russian}
+@misc{wiki:Coronavirus_disease_2019,
+author = "Wikipedia",
+title = "{Coronavirus disease 2019} --- {W}ikipedia{,} The Free Encyclopedia",
+year = "2020",
+howpublished = {\url{http://en.wikipedia.org/w/index.php?title=Coronavirus\%20disease\%202019&oldid=955965814}},
 }
 
-@online{wiki_solow,
-author = {Википедия},
-title = {Robert Solow},
-year = {2020},
-url = {https://en.wikipedia.org/wiki/Robert_Solow},
-organization = {Wikipedia},
-urldate = {27.04.2020},
-language = {english}
+@misc{wiki:Robert_Solow,
+author = "Wikipedia",
+title = "{Robert Solow} --- {W}ikipedia{,} The Free Encyclopedia",
+year = "2020",
+howpublished = {\url{http://en.wikipedia.org/w/index.php?title=Robert\%20Solow&oldid=950253849}},
 }
 
-@ARTICLE{eric_sims,
-author      = {Eric Sims},
-title       = {Economic Growth and the Solow Model},
-journal     = {Intermediate Macroeconomics},
+@misc{wiki:Serbia,
+author = "Wikipedia",
+title = "{Serbia} --- {W}ikipedia{,} The Free Encyclopedia",
+year = "2020",
+howpublished = {\url{https://en.wikipedia.org/wiki/Serbia}},
+}
+
+@Article{eric_sims,
+author = {Eric Sims},
+title  = {{Economic Growth and the Solow Model}},
+year = 2012,
+month={},
+keywords={},
 institution = {University of Notre Dame},
-year = {2012},
-language = {english},
-urldate = {06.05.2020},
-authorother = {true},
-authorconf = {true},
-url = {https://www3.nd.edu/~esims1/solow_model.pdf}
+url={https://www3.nd.edu/~esims1/solow_model.pdf}
+}
+
+@book{barro,
+title={Экономический рост},
+author={Барро, Р.Д. and Сала-и-Мартин, Х. and Моисеев, А.Н. and Капустина, О.В.},
+isbn={9785947747904},
+year={2010},
+publisher={Бином. Лаборатория знаний}
 }
