@@ -6,7 +6,8 @@
 
 VKR_Crnorbnja_Filip.tex - главный файл дипломной работы.
 В каталоге inc/ находятся файлы, которые подключаются к main.tex:
-* title.pdf - титульный лмст
+* title.pdf - титульный лист.
+* abstract.tex - аннотация.
 * contents.tex - содержание.
 * nomenclature.tex - перечень сокращений и условных обозначений.
 * intro.tex - введение.
